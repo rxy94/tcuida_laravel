@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# tcuida_laravel
+Adaptación del proyecto tcuida a laravel. Práctica 2º trimestre DWES.
+
+<h2>Desarrollo paso a paso:</h2> 
+<p>1) Creación y población de la base de datos (31/01/25)</p>
+>>>>>>> 60acc958d80430b7f5e7700f0652a49b3374074b
