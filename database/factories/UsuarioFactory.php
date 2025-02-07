@@ -26,6 +26,7 @@ class UsuarioFactory extends Factory
             "apeUsu" => fake()->lastName(),
             "emailUsu" => fake()->unique()->safeEmail(),
             "claveUsu" => Hash::make("123456789"),
+            "admin" => fake()->boolean(),
 
         ];
     }

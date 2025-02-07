@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("apeUsu");
             $table->string("emailUsu")->unique();
             $table->string("claveUsu");
+            $table->boolean("admin")->default(false);
             $table->timestamps();
 
         });

@@ -24,6 +24,7 @@ class Usuario extends Authenticatable
         "nomUsu",
         "apeUsu",
         "emailUsu",
+        "claveUsu",
     ];
 
     /**
