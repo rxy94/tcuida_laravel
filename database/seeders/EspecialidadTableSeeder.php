@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Adaptación del proyecto T-Cuida a Laravel
+ * Autora: Ruyi Xia Ye - 2ºDAW
+ */
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;

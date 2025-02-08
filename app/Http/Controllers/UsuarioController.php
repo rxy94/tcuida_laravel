@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Adaptación del proyecto T-Cuida a Laravel
+ * Autora: Ruyi Xia Ye - 2ºDAW
+ */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;

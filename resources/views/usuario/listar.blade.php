@@ -3,7 +3,8 @@
     @parent
 
     <div class="w-full p-4 mt-5">
-        <a href="{{ route("usuario.crear")}}" class="bg-blue-500 text-white py-2 px-3 mb-5 rounded hover:bg-blue-600">
+        <a href="{{ route("usuario.crear")}}" 
+           class="bg-blue-500 text-white py-2 px-3 mb-5 rounded hover:bg-blue-600">
             Crear nuevo usuario
         </a>
         <table class="min-w-full table-auto border-collapse border border-gray-300 mt-5">
@@ -29,10 +30,13 @@
                         </td>
                         <td class="px-4 py-2">
                             <div class="flex space-x-2 justify-center">
-                                <a href="" class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600">
+                                <a href="" 
+                                   class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600">
                                     Actualizar
                                 </a>
-                                <a href="{{ route("usuario.borrar", [ "usuario" => $usuario ]) }}" class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">
+                                <a href="{{ route("usuario.borrar", [ "usuario" => $usuario ]) }}"      
+                                   class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
+                                   onclick="return confirm('¿Estás segur@ que quieres borrar este usuario?');">
                                     Borrar
                                 </a>
                             </div>

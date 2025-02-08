@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Adaptación del proyecto T-Cuida a Laravel
+ * Autora: Ruyi Xia Ye - 2ºDAW
+ */
+
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
