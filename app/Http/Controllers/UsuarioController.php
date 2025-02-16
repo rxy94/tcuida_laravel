@@ -10,17 +10,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use \App\Models\Usuario;
+use Illuminate\Validation\Rule;
 
 class UsuarioController extends Controller
 {
-
-    public $campos = [
-        [ "label" => "Nombre", "name" => "nombre", "type" => "text", "placeholder" => "Nombre" ],
-        [ "label" => "Apellidos", "name" => "apellidos", "type" => "text", "placeholder" => "Apellidos" ],
-        [ "label" => "Email", "name" => "email", "type" => "email", "placeholder" => "Email" ],
-        [ "label" => "Contraseña", "name" => "clave", "type" => "password", "placeholder" => "Introduce tu contraseña" ],
-
-    ];
     
     /**
      * Recupera los usuarios de la bbdd
@@ -63,36 +56,60 @@ class UsuarioController extends Controller
         }
 
         $request->validate([
-            "nombre" => "string|required|max:100",
-            "apellidos" => "string|required|max:100",
-            "email" => "unique:usuario,emailUsu|required",
-            "clave" => "min:5|max:15|required",
+            "nombre" => "required|string|max:100",
+            "apellidos" => "required|string|max:100",
+            "email" => "required|unique:usuario,email",
+            "clave" => "required|min:5|max:15",
 
         ]);
 
         Usuario::create([
             "nomUsu" => $request->input("nombre"),
             "apeUsu" => $request->input("apellidos"),
-            "emailUsu" => $request->input("email"),
-            "claveUsu" => Hash::make($request->input("clave")),
+            "email" => $request->input("email"),
+            "admin" => $request->input("admin"),
+            "password" => Hash::make($request->input("clave")),
 
         ]);
 
         return to_route("usuario.listar");
     }
 
-
     /**
-     * Modifica los datos de un usuario
+     * Undocumented function
      *
      * @param Request $request
+     * @param Usuario $usuario
      * @return void
      */
-    public function editarUsuario(Request $request, Usuario $usuario) {
+    public function editarUsuario(Request $request, Usuario $usuario)
+    {
+        if ($request->isMethod("GET")) {
+            return view("usuario.editar", ["usuario" => $usuario]);
+        }
 
-        /* TODO */
+        $request->validate([
+            "nombre" => "required|string|max:100",
+            "apellidos" => "required|string|max:100",
+            "email" => [
+                "required",
+                "email",
+                Rule::unique("usuario", "email")->ignore($usuario->idUsu, "idUsu"),
+            ],
+            "clave" => "nullable|min:5|max:15",
+
+        ]);
+
+        $usuario->update([
+            "nomUsu" => $request->input("nombre"),
+            "apeUsu" => $request->input("apellidos"),
+            "email" => $request->input("email"),
+            "admin" => $request->input("admin"),
+            "password" => $request->filled("clave") ? Hash::make($request->input("clave")): $usuario->password,
+
+        ]);
+
         return to_route("usuario.listar");
     }
-
 
 }

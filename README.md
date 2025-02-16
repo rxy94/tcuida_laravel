@@ -7,69 +7,58 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# T-Cuida+
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descripción del Proyecto
+Este proyecto es la adaptación de la aplicación **T-Cuida** al framework Laravel. Se trata de una aplicación web desarrollada como parte de la práctica del segundo trimestre de DWES (Desarrollo Web con Entornos Servidor). La aplicación incluye funcionalidades clave como la gestión de usuarios, autenticación, control de sesiones y un panel principal (`home`) para los usuarios autenticados.
+Autora: Ruyi Xia Ye
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Características Principales
 
-## Learning Laravel
+### 1. **Creación y Población de la Base de Datos**
+- La base de datos se creó utilizando **migraciones**, permitiendo una estructura modular y fácilmente escalable.
+- Los datos iniciales se poblaron mediante el uso de **factorías** y **seeders**, asegurando una base de datos inicial consistente para desarrollo y pruebas.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. **Uso de modelos y Controladores**
+- Se implementaron **modelos Eloquent** para interactuar con las tablas de la base de datos, encapsulando la lógica de negocio.
+- Los controladores gestionan las solicitudes HTTP y delegan la lógica a los modelos correspondientes, siguiendo el **patrón MVC**.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 3. **Crud para la tabla usuario**
+- Se desarrolló un completo **CRUD** (Create, Read, Update, Delete) para la tabla usuario.
+- Funcionalidades incluidas:
+<li>Listado de Usuarios : Muestra todos los usuarios registrados.</li>
+<li>Creación de Usuarios : Permite registrar nuevos usuarios en la base de datos.</li>
+<li>Edición de Usuarios : Permite actualizar los datos de un usuario existente.</li>
+<li>Eliminación de Usuarios : Permite eliminar usuarios de la base de datos.</li>
+- El CRUD está protegido para que solo los administradores puedan acceder a estas funciones.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. **Login y Home de la Aplicación**
+- Se implementó un sistema de inicio de sesión (login) que verifica las credenciales del usuario contra la base de datos.
+- Una vez autenticado, el usuario es redirigido al home de la aplicación, donde puede acceder a las funcionalidades disponibles según su rol.
 
-## Laravel Sponsors
+### 5. **Autenticación y Control de Sesiones**
+- La autenticación se maneja mediante **middlewares**, asegurando que solo los usuarios autenticados puedan acceder a ciertas rutas.
+- Se implementó un middleware personalizado (admin) para restringir el acceso a funcionalidades administrativas.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Historial de Desarrollo
 
-### Premium Partners
+A continuación, se detalla el progreso del desarrollo del proyecto:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+#### 1. **Creación y Población de la Base de Datos**
+- **Fecha:** 31/01/2025
+- Se diseñó y creó la estructura de la base de datos utilizando migraciones de Laravel. Además, se poblaron los datos iniciales mediante factorías (`factories`) y seeders para facilitar las pruebas.
 
-## Contributing
+#### 2. **Modificación de la Tabla Usuario**
+- **Fecha:** 07/02/2025
+- Se añadió un campo booleano `admin` a la tabla `usuario` para distinguir entre usuarios normales y administradores.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 3. **Implementación del CRUD para Usuarios**
+- **Fechas:** 07/02/2025 - 16/02/2025
+  - **Listado, Creación y Eliminación:** El 07/02/2025 se implementaron las funcionalidades básicas del CRUD (listado, creación y eliminación de usuarios).
+  - **Actualización:** El 16/02/2025 se completó la función de actualización del CRUD, permitiendo modificar los datos de los usuarios existentes.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# tcuida_laravel
-
-<h1>Adaptación del proyecto tcuida a laravel. Práctica 2º trimestre DWES.</h1>
-
-<h2>Desarrollo paso a paso del proyecto:</h2> 
-<p>1) Creación y población de la base de datos. (31/01/25)</p>
-<p>2) Modificación de la tabla usuario: añadimos el campo booleano admin. (07/02/25)</p>
-<p>3) Creación del CRUD para usuario, faltando por implementar el Update. (07/02/25)</p>
+#### 4. **Autenticación y Pantalla de Inicio**
+- **Fecha:** 16/02/2025
+- Se desarrolló el sistema de inicio de sesión (`login`) que permite a los usuarios acceder al panel principal (`home`) de la aplicación. Este sistema incluye autenticación segura y control de sesiones.

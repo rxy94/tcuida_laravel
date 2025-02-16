@@ -24,8 +24,8 @@ return new class extends Migration
             # Atributos
             $table->string("nomUsu");
             $table->string("apeUsu");
-            $table->string("emailUsu")->unique();
-            $table->string("claveUsu");
+            $table->string("email")->unique();
+            $table->string("password");
             $table->boolean("admin")->default(false);
             $table->timestamps();
 

@@ -24,8 +24,8 @@ class UsuarioTableSeeder extends Seeder
             
             "nomUsu" => "Ruyi",
             "apeUsu" => "Xia Ye",
-            "emailUsu" => "ruyi@tcuida.com",
-            "claveUsu" => Hash::make("123456789"),
+            "email" => "ruyi@tcuida.com",
+            "password" => Hash::make("123456789"),
             "admin" => true,
             
         ]);

@@ -5,13 +5,13 @@
     <div class="w-full p-4 mt-5">
 
         <h1 class="text-center text-yellow-400 text-3xl font-semibold">
-            @lang('tcuida.tit_crearUsuario')
+            @lang('tcuida.tit_editarUsuario')
         </h1>
         <div class="flex items-center justify-center p-12">
 
             <div class="mx-auto w-full max-w-xl">
                 
-                <form action="{{ route('usuario.crear') }}" method="post">
+                <form action="{{ route('usuario.editar', $usuario) }}" method="post">
 
                     @csrf
                     {{-- Campo Nombre --}}
@@ -20,6 +20,7 @@
                             @lang('tcuida.lbl_nombre') 
                         </label>
                         <input type="text" name="nombre" id="nombre"
+                            value="{{ $usuario->nomUsu }}"
                             placeholder="Nombre"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-black outline-none focus:border-[#6A64F1] focus:shadow-md"
                         />
@@ -38,6 +39,7 @@
                             @lang('tcuida.lbl_apellidos') 
                         </label>
                         <input type="text" name="apellidos" id="apellidos"
+                            value="{{ $usuario->apeUsu }}"
                             placeholder="Apellidos"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-black outline-none focus:border-[#6A64F1] focus:shadow-md"
                         />
@@ -56,6 +58,7 @@
                             @lang('tcuida.lbl_email')
                         </label>
                         <input type="email" name="email" id="email"
+                            value="{{ $usuario->email }}"
                             placeholder="usuario@tcuida.com"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-black outline-none focus:border-[#6A64F1] focus:shadow-md"
                         />
@@ -73,7 +76,7 @@
                         <label for="clave" class="mb-3 block text-base font-medium text-[#07074D]">
                             @lang('tcuida.lbl_clave')
                         </label>
-                        <input type="text" name="clave" id="clave"
+                        <input type="password" name="clave" id="clave"
                             placeholder="Introduce tu contraseña"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-black outline-none focus:border-[#6A64F1] focus:shadow-md"
                         />
@@ -93,19 +96,19 @@
                         </label>
                         <select name="admin" id="admin" 
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-black outline-none focus:border-[#6A64F1] focus:shadow-md">
-                            <option value="0">@lang('tcuida.val_noAdmin')</option>
-                            <option value="1">@lang('tcuida.val_siAdmin')</option>
+                            <option value="0">@lang("tcuida.val_noAdmin")</option>
+                            <option value="1">@lang("tcuida.val_siAdmin")</option>
                         </select>
                     </div>
                     {{-- Botones --}}
                     <div>
                         <button class=" bg-blue-600 text-white py-2 px-3 mb-5 rounded hover:bg-blue-800">
-                            @lang('tcuida.btn_guardar')
+                            Guardar
                         </button>
                         <a type="button" 
                            href="{{ route('usuario.listar') }}" 
                            class=" bg-gray-800 text-white py-2 px-3 mb-5 rounded hover:bg-gray-600">
-                           @lang('tcuida.btn_volver')
+                            Volver
                         </a>
                     </div>
 

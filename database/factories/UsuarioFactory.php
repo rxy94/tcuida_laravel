@@ -29,8 +29,8 @@ class UsuarioFactory extends Factory
         return [
             "nomUsu" => fake()->firstName(),
             "apeUsu" => fake()->lastName(),
-            "emailUsu" => fake()->unique()->safeEmail(),
-            "claveUsu" => Hash::make("123456789"),
+            "email" => fake()->unique()->safeEmail(),
+            "password" => Hash::make("123456789"),
             "admin" => fake()->boolean(),
 
         ];
