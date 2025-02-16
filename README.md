@@ -28,10 +28,10 @@ Autora: Ruyi Xia Ye
 ### 3. **Crud para la tabla usuario**
 - Se desarrolló un completo **CRUD** (Create, Read, Update, Delete) para la tabla usuario.
 - Funcionalidades incluidas:
-<li>Listado de Usuarios : Muestra todos los usuarios registrados.</li>
-<li>Creación de Usuarios : Permite registrar nuevos usuarios en la base de datos.</li>
-<li>Edición de Usuarios : Permite actualizar los datos de un usuario existente.</li>
-<li>Eliminación de Usuarios : Permite eliminar usuarios de la base de datos.</li>
+    - Listado de Usuarios : Muestra todos los usuarios registrados.
+    - Creación de Usuarios : Permite registrar nuevos usuarios en la base de datos.
+    - Edición de Usuarios : Permite actualizar los datos de un usuario existente.
+    - Eliminación de Usuarios : Permite eliminar usuarios de la base de datos.
 - El CRUD está protegido para que solo los administradores puedan acceder a estas funciones.
 
 ### 4. **Login y Home de la Aplicación**
