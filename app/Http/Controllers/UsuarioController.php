@@ -7,10 +7,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request;
 use \App\Models\Usuario;
+
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {

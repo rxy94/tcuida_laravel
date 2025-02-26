@@ -8,25 +8,24 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 # Ruta para el login
-Route::get('/', [AuthenticatedSessionController::class, 'create'])
-->name('login');
+Route::get('/', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::post('/', [AuthenticatedSessionController::class, 'store']);
 
 # Ruta para el logout
 Route::post('/logout', [AuthenticatedSessionController::class, 'logout'])->name('logout');
 
 # Ruta para el home
-Route::view("/home", "home")->middleware("auth")->name("home");
+Route::view('/home', 'home')->middleware('auth')->name('home');
 
 # Rutas para Usuario
 Route::middleware('auth')->group(function() {
 
     Route::get('/usuarios', [ UsuarioController::class, 'listarUsuarios'])
-           ->name('usuario.listar');
-    Route::get('usuarios/borrar/{usuario}', [ UsuarioController::class, 'borrarUsuario'])
-           ->name('usuario.borrar');
+              ->name('usuario.listar');
+    Route::post('usuarios/borrar/{usuario}', [ UsuarioController::class, 'borrarUsuario'])
+              ->name('usuario.borrar');
     Route::match(['get', 'post'], 'usuarios/crear', [ UsuarioController::class, 'crearUsuario'])
-           ->name('usuario.crear');
+              ->name('usuario.crear');
     Route::match(['get', 'post'], 'usuarios/editar/{usuario}', 
                  [ UsuarioController::class, 'editarUsuario'])
                  ->name('usuario.editar');

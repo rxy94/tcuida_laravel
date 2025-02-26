@@ -8,14 +8,14 @@ return [
     "msg_loginSubtitulo" => "A web application where you'll administer your user's information more efficiently",
 
     # Títulos
-    "tit_crearUsuario" => "Create a new user",
-    "tit_editarUsuario" => "Edit a user",
+    "tit_crearUsuario" => "Register new user",
+    "tit_editarUsuario" => "Edit user",
 
     # Botones
     "btn_guardar" => "Save",
     "btn_volver" => "Back",
     "btn_login" => "Login",
-    "btn_crearUsuario" => "Create new user",
+    "btn_crearUsuario" => "Register new user",
 
     # Enlaces
     "lnk_usuarios" => "Users",

@@ -8,14 +8,14 @@ return [
     "msg_loginSubtitulo" => "Una aplicación web donde podrás administrar la información de tus usuarios de forma más eficaz",
 
     # Títulos
-    "tit_crearUsuario" => "Crear un nuevo usuario",
-    "tit_editarUsuario" => "Editar un usuario",
+    "tit_crearUsuario" => "Registrar nuevo usuario",
+    "tit_editarUsuario" => "Editar usuario",
 
     # Botones
     "btn_guardar" => "Guardar",
     "btn_volver" => "Volver",
     "btn_login" => "Entrar",
-    "btn_crearUsuario" => "Crear nuevo usuario",
+    "btn_crearUsuario" => "Registrar nuevo usuario",
 
     # Enlaces
     "lnk_usuarios" => "Usuarios",

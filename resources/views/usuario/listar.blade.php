@@ -44,11 +44,15 @@
                                        class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600">
                                         <i class="fa-solid fa-pen" title="Actualizar"></i>
                                     </a>
-                                    <a href="{{ route('usuario.borrar', [ 'usuario' => $usuario ]) }}"      
-                                       class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
-                                       onclick="return confirm('¿Estás segur@ que quieres borrar este usuario?');">
-                                        <i class="fa-solid fa-trash" title="Borrar"></i>
-                                    </a>
+                                    {{-- Borrar --}}
+                                    <form action="{{ route('usuario.borrar', [ 'usuario' => $usuario ]) }}}" method="post">
+                                        @csrf
+                                        <button 
+                                            class="bg-red-500 text-white py-1 px-3 rounded   hover:bg-red-600"
+                                            onclick="return confirm('¿Estás segur@ que quieres borrar este usuario?');">
+                                             <i class="fa-solid fa-trash" title="Borrar"></i>
+                                         </button>
+                                    </form>
                                 </div>
                             </td>
                         @endif
