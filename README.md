@@ -42,6 +42,12 @@ Autora: Ruyi Xia Ye
 - La autenticación se maneja mediante **middlewares**, asegurando que solo los usuarios autenticados puedan acceder a ciertas rutas.
 - Se implementó un middleware personalizado (admin) para restringir el acceso a funcionalidades administrativas.
 
+### 6. **Creación de componentes**
+- Creación de los componentes:
+    - **x-botonera-listar**: sustituye a los botones **Editar** y **Borrar** dentro del campo Acciones de la tabla de Usuarios.
+    - **x-botonera-form**: sustituye a los botones **Guardar** y **Volver** dentro de los formularios Crear y Editar.
+    - **x-boton-registrar**: sustituye al botón **Registar nuevo usuario** dentro de la vistar usuario.listar.
+
 ### Historial de Desarrollo
 
 A continuación, se detalla el progreso del desarrollo del proyecto:
@@ -55,10 +61,15 @@ A continuación, se detalla el progreso del desarrollo del proyecto:
 - Se añadió un campo booleano `admin` a la tabla `usuario` para distinguir entre usuarios normales y administradores.
 
 #### 3. **Implementación del CRUD para Usuarios**
-- **Fechas:** 07/02/2025 - 16/02/2025
+- **Fechas:** 07/02/2025 - 25/02/2025
   - **Listado, Creación y Eliminación:** El 07/02/2025 se implementaron las funcionalidades básicas del CRUD (listado, creación y eliminación de usuarios).
   - **Actualización:** El 16/02/2025 se completó la función de actualización del CRUD, permitiendo modificar los datos de los usuarios existentes.
+  - **Actualización:** El 25/02/2025 se modificó la función de borrado del CRUD, cambiando el enlace con protocolo GET por un formulario con método POST para prevenir ataques crsf.
 
 #### 4. **Autenticación y Pantalla de Inicio**
 - **Fecha:** 16/02/2025
 - Se desarrolló el sistema de inicio de sesión (`login`) que permite a los usuarios acceder al panel principal (`home`) de la aplicación. Este sistema incluye autenticación segura y control de sesiones.
+
+#### 5. **Creación e Implementación de Componentes**
+- **Fecha:** 27/02/2025
+- Se crearon los componentes (`x-botonera-listar`), (`x-botonera-form`), y (`x-boton-registrar`).
